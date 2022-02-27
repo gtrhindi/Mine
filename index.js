@@ -6,7 +6,7 @@ let data = JSON.parse(rawdata);
 var lasttime = -1;
 var moving = 0;
 var connected = 0;
-var actions = [ 'forward', 'back', 'left', 'right']
+var actions = [ 'forward', 'back', 'left', 'right', 'junp']
 var lastaction;
 var pi = 3.14159;
 var moveinterval = 2; // 2 second movement interval
@@ -35,7 +35,7 @@ bot.on('login',function(){
 bot.on('time', function(time) {
 	if(nightskip == "true"){
 	if(bot.time.timeOfDay >= 13000){
-	bot.chat('"/gamemode spectator"')
+	bot.chat('/time set day')
 	}}
     if (connected <1) {
         return;
